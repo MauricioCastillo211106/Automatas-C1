@@ -75,7 +75,6 @@ def lecturaPaginaWeb(urlvalo):
 
 # ayuda a hacer saltos de lineas en cada texto
     text = '\n'.join(chunk for chunk in chunks if chunk)
-
 # print(text)
 
 # escritura en el txt
@@ -94,13 +93,13 @@ def lecturaPaginaWeb(urlvalo):
             lin = linea.replace("\n", "")
             #pasamos el  valor lin sin salto de linea para que el automata lo valide
             afd.automata(lin)
+            print(afd.automata(lin))
             #si el automata retorna un true entonces entra
             if afd.automata(lin):
                 #imprimimos el valor del automata, posteriormente se guardan los valores verdaderos
                 print(afd.automata(lin))
                 telefonosValidados.append(lin)
                 print(telefonosValidados)
-    #limpiamos el arreglo telefonosvalidados para su posterior ingreso en el txt
     contenedor = str(telefonosValidados)
     cal = contenedor.replace("[", "")
     lista = cal.replace("]", "")
@@ -111,7 +110,7 @@ def lecturaPaginaWeb(urlvalo):
         f.close()
         #limpiamos telefonosvalidados
     telefonosValidados.clear()
-    #chequea el txt para poder mostrarlos o dar un aviso de que esta vasio
+    #chequea el txt para poder mostrarlos o dar un aviso de que esta vacio
     with open('TelefonosValidos.txt') as f:
         vacio = f.readlines()
         print(vacio)
