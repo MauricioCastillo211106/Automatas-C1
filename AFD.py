@@ -359,8 +359,8 @@ class AFD:
         for symbol in a:
             # Obtiene el estado de destino mediante la transición
             estadoActual = self.transiciones.get((estadoActual, symbol))
-            print(estadoActual)
-            print(symbol)
+            #print(estadoActual)
+            #print(symbol)
 
             # Si no hay transición, la palabra no es aceptada
             if estadoActual is None:

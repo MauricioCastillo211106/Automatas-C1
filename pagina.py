@@ -146,7 +146,8 @@ def mostrardatos():
             if linea == " ":
                 print("no hay valores")
             else:
-                tabla.insert('', 0, text=linea)
+                saltos = linea.replace(",", "\n")
+                tabla.insert('', 0, text=saltos)
 
     tabla.pack()
 
